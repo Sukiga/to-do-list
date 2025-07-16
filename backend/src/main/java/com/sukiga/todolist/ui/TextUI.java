@@ -16,7 +16,7 @@ public class TextUI {
             System.out.println("c --> create a task");
             System.out.println("r --> remove a task");
             System.out.println("v --> view your tasks");
-            System.out.println("q --> quit");
+            System.out.println("q --> quit\n");
             String input = scanner.nextLine();
             if (input.equals("c")) {
                 System.out.print("Task: ");
