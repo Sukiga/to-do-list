@@ -1,0 +1,95 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+
+}
+
+.frame {
+  background-color: rgb(200, 227, 187);
+  border-radius: 20px;
+  width: 450px;
+  height: 550px;
+  padding: 50px;
+  border: 6px solid rgb(65, 134, 69);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+.list-frame {
+  width: 350px;
+  height: 375px;
+  background-color: white;
+  border-radius: 9px;
+  border: 10px solid rgb(180, 201, 180);
+}
+
+.date {
+  transform: translate(-10px, -20px);
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-size: 40px;
+  font-weight: bold;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+.history {
+  transform: translate(15px,-30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.history img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.historyIcon {
+  position: relative;
+  display: inline-block;
+}
+
+a.history{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.history:hover, a.history:hover .overlay {
+  color: black;
+  opacity: 1;
+  font-weight: bold;
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('pics/todolistHistoryIcon copy.png');
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+}
+

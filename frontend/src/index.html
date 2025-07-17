@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todolist</title>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <link rel="stylesheet" href="index.css" />
+
+    <script defer src="render.js" ></script>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="top">
+        <p class="date">
+          <span id="month"></span> /
+          <span id="day"></span> /
+          <span id="year"></span>
+        </p>
+        <a class="history">
+          <div class="historyIcon">
+            <img src="pics/todolistHistoryIcon.png" alt="History">
+            <div class="overlay"></div>
+          </div>
+          History
+        </a>
+      </div>
+      <div class="list-frame"></div>
+    </div>
+  </body>
+</html>
