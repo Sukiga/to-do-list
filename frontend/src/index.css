@@ -1,6 +1,5 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
@@ -33,7 +32,17 @@ body {
 
 .date {
   transform: translate(-10px, -20px);
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-size: 40px;
+  font-weight: bold;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.title {
+  transform: translate(-50px, -10px);
   font-smooth: never;
   -webkit-font-smoothing: none;
   font-size: 40px;
@@ -57,39 +66,76 @@ body {
   width: 60px;
 }
 
-.history img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.historyIcon {
-  position: relative;
-  display: inline-block;
-}
-
-a.history{
+a.history, a.home {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-a.history:hover, a.history:hover .overlay {
+
+.history img, .home img{
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  position: relative;
+}
+
+.historyIcon, .homeIcon {
+  position: relative;
+  display: inline-block;
+}
+
+a.history:hover, a.history:hover .overlay, a.home:hover, a.home:hover .overlay {
   color: black;
   opacity: 1;
   font-weight: bold;
 
 }
 
-.overlay {
+.history .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url('pics/todolistHistoryIcon copy.png');
+  background-image: url('pics/todolistHistoryIconcopy.png');
   opacity: 0;
   background-size: cover;
   background-position: center;
+  z-index: 1;
 }
+
+.home .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('pics/todolistHomeIconHover.png');
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.home {
+  transform: translate(87px, -30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.home:hover .homeIcon img, .history:hover .historyIcon img{
+  display: block;
+  opacity: 0;
+}
+
+.home:hover .overlay, .history:hover .overlay {
+  opacity: 1;
+}
+
+
 
