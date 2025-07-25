@@ -28,6 +28,12 @@ body {
   background-color: white;
   border-radius: 9px;
   border: 10px solid rgb(180, 201, 180);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-color:rgb(244, 244, 244);
+  align-items: center;
 }
 
 .date {
@@ -136,6 +142,69 @@ a.history:hover, a.history:hover .overlay, a.home:hover, a.home:hover .overlay {
 .home:hover .overlay, .history:hover .overlay {
   opacity: 1;
 }
+
+.newTask {
+  height: auto;
+  width: auto;
+  max-height: 100px;
+  max-width: 300px;
+  border-radius: 10px;
+  border: 5px double rgb(200, 227, 187); 
+  margin: 10px;
+  position: relative;
+  padding: 5px;
+  background-color: white;
+  color: black;
+  list-style: none;
+  font-size: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+
+ul li span {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul li span:hover {
+  cursor: pointer;
+}
+
+button {
+  width: 200px;
+  height: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-radius: 10px;
+  border: 0;
+  border-bottom: 2px solid rgb(227, 227, 227);
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  background-color: rgb(252, 255, 240);
+  flex-shrink: 0;    
+}
+
+button:hover {
+  background-color: rgb(236, 239, 223);
+  border-left: 1px solid rgb(227, 227, 227);
+  border-right: 1px solid rgb(227, 227, 227);
+  border-bottom: 2px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
+
+button:active {
+  background-color:rgb(222, 225, 206);
+  border-left: 1px solid (207, 207, 207);
+  border-right: 1px solid (207, 207, 207);
+  border-bottom: 1px solid (187, 187, 187);
+}
+
+
+
+
 
 
 
