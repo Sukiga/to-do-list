@@ -24,16 +24,16 @@ body {
 
 .list-frame {
   width: 350px;
+  max-height: 375px;
   height: 375px;
-  background-color: white;
   border-radius: 9px;
   border: 10px solid rgb(180, 201, 180);
-  overflow: auto;
   display: flex;
   flex-direction: column;
-  padding: 5px;
   background-color:rgb(244, 244, 244);
   align-items: center;
+  overflow:auto;
+  position: relative;
 }
 
 .date {
@@ -45,6 +45,7 @@ body {
   font-weight: bold;
   flex: 1;
   white-space: nowrap;
+  cursor: default;
 }
 
 .title {
@@ -55,12 +56,14 @@ body {
   font-weight: bold;
   flex: 1;
   white-space: nowrap;
+  cursor: default;
 }
 
 .top {
   display: flex;
   flex-direction: row;
   gap: 0px;
+  padding-top: 20px;
 }
 
 .history {
@@ -143,6 +146,15 @@ a.history:hover, a.history:hover .overlay, a.home:hover, a.home:hover .overlay {
   opacity: 1;
 }
 
+#list-con {
+  list-style-type: disc;
+  max-height: 370px;
+  height: 370px;
+  width: auto;
+  box-sizing: border-box;
+  flex: 1;
+}
+
 .newTask {
   height: auto;
   width: auto;
@@ -152,32 +164,82 @@ a.history:hover, a.history:hover .overlay, a.home:hover, a.home:hover .overlay {
   border: 5px double rgb(200, 227, 187); 
   margin: 10px;
   position: relative;
-  padding: 5px;
+  padding: 12px 15px 12px 50px;
   background-color: white;
   color: black;
-  list-style: none;
   font-size: 15px;
   user-select: none;
+  list-style: none;
+  cursor: text;
+}
+
+.newTask:hover {
+  box-shadow: 0 0 5px 0 rgb(14, 205, 0);
+}
+
+.newTask::before {
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-position: center;
+  border: 2px solid rgba(0, 0, 0, 0.261); 
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
-ul li span {
+.newTask.checked {
+  text-decoration: line-through;
+  text-decoration-color: rgb(180, 201, 180);
+  color: #555;
+}
+
+.newTask.checked::after {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-position: center;
+  background-color: rgb(175, 201, 175);
+  left: 22px;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+}
+
+ul div span {
   position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-ul li span:hover {
+ul div span:hover {
   cursor: pointer;
+}
+
+.button-wrapper {
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  width: 100%;
+  height: 50px;
+  z-index: 2; 
+  margin: 0 auto;
 }
 
 button {
   width: 200px;
   height: 30px;
-  position: sticky;
+  position: relative;
   top: 0;
-  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
   border-radius: 10px;
   border: 0;
   border-bottom: 2px solid rgb(227, 227, 227);
@@ -185,6 +247,7 @@ button {
   border-right: 1px solid white;
   background-color: rgb(252, 255, 240);
   flex-shrink: 0;    
+  box-shadow: 0 0 15px 0 rgb(214, 214, 214);
 }
 
 button:hover {
@@ -201,7 +264,21 @@ button:active {
   border-right: 1px solid (207, 207, 207);
   border-bottom: 1px solid (187, 187, 187);
 }
-
+ 
+.fade-overlay {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+  rgba(255,0,0,0), 
+  rgba(244,244,244,1)
+  );
+}
 
 
 

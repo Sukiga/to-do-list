@@ -15,12 +15,14 @@ document.getElementById("addTask").onclick = function() {addTask()}
 const listCon = document.getElementById("list-con");
 
 function addTask() {
-    let li = document.createElement("li");
-    li.classList.add("newTask");
-    li.innerHTML = "Add Task one two three four five six seven";
-    listCon.appendChild(li);
+    let div = document.createElement("div");
+    div.classList.add("newTask");
+    div.classList.add("checked");
+    div.contentEditable = "true";
+    div.innerHTML = "Add";
+    listCon.appendChild(div);
     let deletes = document.createElement("span");
     deletes.classList.add("deletes");
     deletes.innerHTML = "\u00d7";
-    li.appendChild(deletes);
+    div.appendChild(deletes);
 }
