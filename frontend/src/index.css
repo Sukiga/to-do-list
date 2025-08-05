@@ -155,29 +155,29 @@ a.history:hover, a.history:hover .overlay, a.home:hover, a.home:hover .overlay {
   flex: 1;
 }
 
-.newTask {
+.task {
+  min-height: 30px;
   height: auto;
-  width: auto;
+  width: 300px;
   max-height: 100px;
-  max-width: 300px;
   border-radius: 10px;
   border: 5px double rgb(200, 227, 187); 
   margin: 10px;
   position: relative;
   padding: 12px 15px 12px 50px;
   background-color: white;
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 15px;
   user-select: none;
   list-style: none;
   cursor: text;
 }
 
-.newTask:hover {
+.task:hover {
   box-shadow: 0 0 5px 0 rgb(14, 205, 0);
 }
 
-.newTask::before {
+.task::before {
   content: '';
   position: absolute;
   height: 28px;
@@ -191,13 +191,13 @@ a.history:hover, a.history:hover .overlay, a.home:hover, a.home:hover .overlay {
   cursor: pointer;
 }
 
-.newTask.checked {
+.task.checked {
   text-decoration: line-through;
   text-decoration-color: rgb(180, 201, 180);
   color: #555;
 }
 
-.newTask.checked::after {
+.task.checked::after {
   content: '';
   position: absolute;
   height: 18px;
@@ -250,7 +250,7 @@ button {
   box-shadow: 0 0 15px 0 rgb(214, 214, 214);
 }
 
-button:hover {
+button:hover { 
   background-color: rgb(236, 239, 223);
   border-left: 1px solid rgb(227, 227, 227);
   border-right: 1px solid rgb(227, 227, 227);
@@ -280,7 +280,9 @@ button:active {
   );
 }
 
-
+#input {
+  width: 215px;
+}
 
 
 
